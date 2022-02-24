@@ -14,13 +14,18 @@ Komendy:
 EnderChest:
 
 /enderchest
+
 /en
+
 /ec
+
 
 Crafting:
 
 /cr
+
 /crafting
+
 
 
 Permisie:
