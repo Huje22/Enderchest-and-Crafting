@@ -10,13 +10,18 @@ Jeśli używasz GeyserMC wiedz że plugin działa tak samo na bedrock jak i na j
 Plugin dodaje opcje otworzenia enderchesta i craftingu tam gdzie chcesz.
 
 Komendy:
+
 EnderChest:
+
 /enderchest
 /en
 /ec
+
 Crafting:
+
 /cr
 /crafting
+
 
 Permisie:
 ender.use
@@ -26,3 +31,4 @@ crafting.use
 
 Potrzebujesz pomocy? Pisz na discord :
  https://discord.gg/aq6NaXsy2k
+:^ ndn
