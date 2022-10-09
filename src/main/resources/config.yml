@@ -1,0 +1,36 @@
+#------------------------------------------------------------------------
+# 				EnderChest and Carfting plugin
+#					By: Indian Bartonka
+#				Support: https://discord.gg/aq6NaXsy2k
+#               § for colors
+#-------------------------------------------------------------------------
+#
+#Prefix
+prefix: "§6[§bEnderChest §aand §eCrafting§6]§r "
+#/open inventory name (You must reload server or restart)
+InvName: "Crafting and Enderchest"
+#Permissions messages
+Open-Perm: "§cYou must have permision §bendacrft.open"
+admin-perms: "§cYou must have permision §bendacrft.admin"
+feature-perms: "§cYou dont have permision to use this feature! "
+#Sender must be player message
+player-not-be: "You must be a Player"
+#Other messages
+off-feature: "§cThis feature is disabled by admin "
+successfully-set: "Successfully set to "
+config-reload: "Config has been reload"
+#Option that allows you to use crafting or enderchest w / open
+EnderChest: true
+Crafting: true
+#Option that allows you to open crafting or enderchest in your hand
+EnderChest-Hand: true
+Crafting-Hand: true
+#Message when crafting or enderchest is opened in hand
+Crafting-Open-Hand: "§aYou open Crafting "
+EnderChest-Open-Hand: "§aYou open Enderchest "
+#On/off state in / open
+message-off: "§4Off"
+message-on: "§aOn"
+#Don't touch this 
+EnderInfo: "§aOn"
+CraftInfo: "§aOn"
