@@ -29,8 +29,6 @@ public final class Enderchest extends JavaPlugin implements Listener {
     String version = getDescription().getVersion();
 
 
-
-
     @Override
     public void onEnable() {
 
@@ -45,10 +43,8 @@ public final class Enderchest extends JavaPlugin implements Listener {
         }
 
 
-
-
         Bukkit.getConsoleSender().sendMessage("------------------------------");
-        Bukkit.getConsoleSender().sendMessage("\t " + prefix  + " " + version);
+        Bukkit.getConsoleSender().sendMessage("\t " + prefix + " " + version);
         Bukkit.getConsoleSender().sendMessage("------------------------------");
 
 
@@ -57,7 +53,7 @@ public final class Enderchest extends JavaPlugin implements Listener {
                 getLogger().info(prefix + "There is not a new update available.");
 
             } else {
-                getLogger().info (prefix + " There is a new update available.");
+                getLogger().info(prefix + " There is a new update available.");
                 getLogger().info(prefix + " Your version " + this.getDescription().getVersion() + " new version " + version);
 
             }
@@ -84,8 +80,6 @@ public final class Enderchest extends JavaPlugin implements Listener {
         getServer().getPluginManager().registerEvents(new CrRcHandListener(this), this);
 
 
-
-
     }
 
     public void onDisable() {
@@ -95,7 +89,7 @@ public final class Enderchest extends JavaPlugin implements Listener {
 
 
     @EventHandler
-    public void OpJoin(PlayerJoinEvent e){
+    public void OpJoin(PlayerJoinEvent e) {
         Player p = (Player) e.getPlayer();
 
 

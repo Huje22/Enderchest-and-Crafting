@@ -28,7 +28,7 @@ public class InventoryListener implements Listener {
 
                 } else {
                     p.sendMessage(plugin.getConfig().getString("off-feature"));
-                    Bukkit.getScheduler ().runTaskLater (plugin, () -> p.closeInventory(), 5);
+                    Bukkit.getScheduler().runTaskLater(plugin, () -> p.closeInventory(), 5);
                 }
             }
         }
@@ -44,7 +44,7 @@ public class InventoryListener implements Listener {
 
                 } else {
                     p.sendMessage(plugin.getConfig().getString("off-feature"));
-                    Bukkit.getScheduler ().runTaskLater (plugin, () -> p.closeInventory(), 5);
+                    Bukkit.getScheduler().runTaskLater(plugin, () -> p.closeInventory(), 5);
                 }
             }
         }

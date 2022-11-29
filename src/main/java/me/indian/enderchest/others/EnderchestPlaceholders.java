@@ -9,6 +9,7 @@ import org.jetbrains.annotations.NotNull;
 public class EnderchestPlaceholders extends PlaceholderExpansion {
 
     private final Enderchest plugin;
+
     public EnderchestPlaceholders(Enderchest plugin) {
         this.plugin = plugin;
     }
@@ -42,29 +43,29 @@ public class EnderchestPlaceholders extends PlaceholderExpansion {
             return this.getVersion();
         }
 
-        if(identifier.equals("crafting_status")){
-          String crinfo = plugin.getConfig().getString("CraftInfo");
-            return crinfo ;
+        if (identifier.equals("crafting_status")) {
+            String crinfo = plugin.getConfig().getString("CraftInfo");
+            return crinfo;
         }
-        if(identifier.equals("enderchest_status")){
+        if (identifier.equals("enderchest_status")) {
             String eninfo = plugin.getConfig().getString("EnderInfo");
-            return eninfo ;
+            return eninfo;
         }
-        if(identifier.equals("enderchest_hand_status")){
+        if (identifier.equals("enderchest_hand_status")) {
             String status = "";
-            if (plugin.getConfig().getBoolean("EnderChest-Hand")){
+            if (plugin.getConfig().getBoolean("EnderChest-Hand")) {
                 status = plugin.getConfig().getString("message-on");
-            } else{
+            } else {
                 status = plugin.getConfig().getString("message-off");
             }
             return status;
         }
 
-        if(identifier.equals("crafting_hand_status")){
+        if (identifier.equals("crafting_hand_status")) {
             String status = "";
-            if (plugin.getConfig().getBoolean("Crafting-Hand")){
+            if (plugin.getConfig().getBoolean("Crafting-Hand")) {
                 status = plugin.getConfig().getString("message-on");
-            } else{
+            } else {
                 status = plugin.getConfig().getString("message-off");
             }
             return status;

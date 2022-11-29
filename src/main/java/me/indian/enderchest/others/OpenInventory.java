@@ -14,22 +14,21 @@ import java.util.Arrays;
 
 public class OpenInventory {
 
-    public static void OpenInv(Player p , Enderchest plugin) {
+    public static void OpenInv(Player p, Enderchest plugin) {
 
         Inventory inv = Bukkit.createInventory(null, InventoryType.HOPPER, "/open options");
-
 
 
         ItemStack crafting = new ItemStack(Material.CRAFTING_TABLE);
         ItemMeta c = crafting.getItemMeta();
         c.setDisplayName(ChatColor.GREEN + "Crafting");
-        c.setLore(Arrays.asList("§e--------",plugin.getConfig().getString("CraftInfo")));
+        c.setLore(Arrays.asList("§e--------", plugin.getConfig().getString("CraftInfo")));
         crafting.setItemMeta(c);
 
         ItemStack ender = new ItemStack(Material.ENDER_CHEST);
         ItemMeta e = ender.getItemMeta();
         e.setDisplayName(ChatColor.AQUA + "EnderChest");
-        e.setLore(Arrays.asList("§e--------",plugin.getConfig().getString("EnderInfo")));
+        e.setLore(Arrays.asList("§e--------", plugin.getConfig().getString("EnderInfo")));
         ender.setItemMeta(e);
 
 

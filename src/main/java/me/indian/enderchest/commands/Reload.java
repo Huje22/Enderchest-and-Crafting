@@ -16,15 +16,15 @@ public class Reload implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-            if (!sender.hasPermission("admin-perms")) {
-                sender.sendMessage(plugin.getConfig().getString("admin-perms"));
-                return false;
-            }
+        if (!sender.hasPermission("admin-perms")) {
+            sender.sendMessage(plugin.getConfig().getString("admin-perms"));
+            return false;
+        }
 
 
-            plugin.reloadConfig();
-            sender.sendMessage(plugin.getConfig().getString("config-reload"));
-            Bukkit.getConsoleSender().sendMessage(plugin.getConfig().getString("config-reload"));
+        plugin.reloadConfig();
+        sender.sendMessage(plugin.getConfig().getString("config-reload"));
+        Bukkit.getConsoleSender().sendMessage(plugin.getConfig().getString("config-reload"));
 
 
         return false;

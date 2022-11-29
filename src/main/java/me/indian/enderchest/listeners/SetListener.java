@@ -17,51 +17,50 @@ public class SetListener implements Listener {
     }
 
 
-
     @EventHandler
     public void InventoryClickEvent(InventoryClickEvent e) {
         Player p = (Player) e.getWhoClicked();
 
-        if (e.getView().getTitle().equals("/open options")){
-            if(e.getCurrentItem().getItemMeta().getDisplayName().equals(ChatColor.AQUA + "EnderChest")) {
+        if (e.getView().getTitle().equals("/open options")) {
+            if (e.getCurrentItem().getItemMeta().getDisplayName().equals(ChatColor.AQUA + "EnderChest")) {
                 e.setCancelled(true);
                 if (plugin.getConfig().getBoolean("EnderChest") == true) {
-                    plugin.getConfig().set("EnderChest" , false);
+                    plugin.getConfig().set("EnderChest", false);
                     plugin.getConfig().set("EnderInfo", plugin.getConfig().getString("message-off"));
                     plugin.saveConfig();
                     p.sendMessage("EnderChest " + this.plugin.getConfig().getString("successfully-set") + " " + "false");
-                    Bukkit.getScheduler().runTaskLater(plugin, () -> p.closeInventory(),5);
+                    Bukkit.getScheduler().runTaskLater(plugin, () -> p.closeInventory(), 5);
                 } else {
-                    plugin.getConfig().set("EnderChest" , true);
+                    plugin.getConfig().set("EnderChest", true);
                     plugin.getConfig().set("EnderInfo", plugin.getConfig().getString("message-on"));
                     plugin.saveConfig();
                     p.sendMessage("EnderChest " + this.plugin.getConfig().getString("successfully-set") + " " + " true");
-                    Bukkit.getScheduler().runTaskLater(plugin, () -> p.closeInventory(),5);
+                    Bukkit.getScheduler().runTaskLater(plugin, () -> p.closeInventory(), 5);
                 }
             }
         }
-        if (e.getView().getTitle().equals("/open options")){
-            if(e.getCurrentItem().getItemMeta().getDisplayName().equals(ChatColor.GREEN + "Crafting")) {
+        if (e.getView().getTitle().equals("/open options")) {
+            if (e.getCurrentItem().getItemMeta().getDisplayName().equals(ChatColor.GREEN + "Crafting")) {
                 e.setCancelled(true);
 
                 if (plugin.getConfig().getBoolean("Crafting") == true) {
-                    plugin.getConfig().set("Crafting" , false);
+                    plugin.getConfig().set("Crafting", false);
                     plugin.getConfig().set("CraftInfo", plugin.getConfig().getString("message-off"));
                     plugin.saveConfig();
                     p.sendMessage("Crafting " + this.plugin.getConfig().getString("successfully-set") + "false");
-                    Bukkit.getScheduler().runTaskLater(plugin, () -> p.closeInventory(),5);
+                    Bukkit.getScheduler().runTaskLater(plugin, () -> p.closeInventory(), 5);
                 } else {
-                    plugin.getConfig().set("Crafting" , true);
+                    plugin.getConfig().set("Crafting", true);
                     plugin.getConfig().set("CraftInfo", plugin.getConfig().getString("message-on"));
                     plugin.saveConfig();
                     p.sendMessage("Crafting " + this.plugin.getConfig().getString("successfully-set") + "true");
-                    Bukkit.getScheduler().runTaskLater(plugin, () -> p.closeInventory(),5);
+                    Bukkit.getScheduler().runTaskLater(plugin, () -> p.closeInventory(), 5);
                 }
 
             }
         }
-        if (e.getView().getTitle().equals("/open options")){
-            if(e.getCurrentItem().getItemMeta().getDisplayName().equals(ChatColor.BLACK + "pustka")) {
+        if (e.getView().getTitle().equals("/open options")) {
+            if (e.getCurrentItem().getItemMeta().getDisplayName().equals(ChatColor.BLACK + "pustka")) {
                 e.setCancelled(true);
             }
         }

@@ -5,9 +5,9 @@ import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.Inventory;
-
 
 public class CrRcHandListener implements Listener {
 
@@ -20,9 +20,14 @@ public class CrRcHandListener implements Listener {
     @EventHandler
     public void InHandItem(PlayerInteractEvent e) {
         Player p = (Player) e.getPlayer();
+        Action a = e.getAction();
 
-        if (p.hasPermission("endacrft.open")) {
-
+        if (p.getInventory().getItemInMainHand().getType() == Material.CRAFTING_TABLE || p.getInventory().getItemInMainHand().getType() == Material.ENDER_CHEST) {
+            if (p.hasPermission("endacrft.open")) {
+                if (a == Action.RIGHT_CLICK_AIR || a == Action.RIGHT_CLICK_BLOCK) {
+                        return;
+                }
+            }
             if (p.getInventory().getItemInMainHand().getType() == Material.CRAFTING_TABLE) {
                 if (plugin.getConfig().getBoolean("Crafting-Hand")) {
                     p.openWorkbench(p.getLocation(), true);
@@ -46,5 +51,4 @@ public class CrRcHandListener implements Listener {
             }
         }
     }
-
 }

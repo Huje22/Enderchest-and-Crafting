@@ -26,10 +26,8 @@ public class open implements CommandExecutor {
     }
 
 
-
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-
 
 
         if (sender instanceof Player) {
@@ -40,13 +38,13 @@ public class open implements CommandExecutor {
                 ItemStack crafting = new ItemStack(Material.CRAFTING_TABLE);
                 ItemMeta c = crafting.getItemMeta();
                 c.setDisplayName(ChatColor.GREEN + "Crafting");
-                c.setLore(Arrays.asList("§e--------",plugin.getConfig().getString("CraftInfo")));
+                c.setLore(Arrays.asList("§e--------", plugin.getConfig().getString("CraftInfo")));
                 crafting.setItemMeta(c);
 
                 ItemStack ender = new ItemStack(Material.ENDER_CHEST);
                 ItemMeta e = ender.getItemMeta();
                 e.setDisplayName(ChatColor.AQUA + "EnderChest");
-                e.setLore(Arrays.asList("§e--------",plugin.getConfig().getString("EnderInfo")));
+                e.setLore(Arrays.asList("§e--------", plugin.getConfig().getString("EnderInfo")));
                 ender.setItemMeta(e);
 
 
@@ -54,7 +52,6 @@ public class open implements CommandExecutor {
                 ItemMeta s = empty.getItemMeta();
                 s.setDisplayName(ChatColor.BLACK + "empty");
                 empty.setItemMeta(s);
-
 
 
                 inv.setItem(0, empty);
@@ -68,9 +65,9 @@ public class open implements CommandExecutor {
             } else {
                 sender.sendMessage(plugin.getConfig().getString("Open-Perm"));
             }
-            } else {
-                sender.sendMessage(plugin.getConfig().getString("player-not-be"));
-            }
+        } else {
+            sender.sendMessage(plugin.getConfig().getString("player-not-be"));
+        }
 
         return false;
     }

@@ -7,19 +7,19 @@ import org.bukkit.inventory.Inventory;
 
 public class EnderChestApi {
 
-    public static void OpenCrafting(Enderchest plugin, Player p , Boolean open, String refusal , Boolean closeinv) {
+    public static void OpenCrafting(Enderchest plugin, Player p, Boolean open, String refusal, Boolean closeinv) {
 
         if (open == true) {
             p.openWorkbench(p.getLocation(), true);
         } else {
             p.sendMessage(refusal);
-            if (closeinv == true){
-                Bukkit.getScheduler().runTaskLater(plugin, () -> p.closeInventory() ,20);
+            if (closeinv == true) {
+                Bukkit.getScheduler().runTaskLater(plugin, () -> p.closeInventory(), 20);
             }
         }
     }
 
-    public static void OpenEnderChest(Enderchest plugin, Player p , Boolean open, String refusal, Boolean closeinv ) {
+    public static void OpenEnderChest(Enderchest plugin, Player p, Boolean open, String refusal, Boolean closeinv) {
 
         if (open == true) {
 
@@ -28,8 +28,8 @@ public class EnderChestApi {
 
         } else {
             p.sendMessage(refusal);
-            if (closeinv == true){
-                Bukkit.getScheduler().runTaskLater(plugin, () -> p.closeInventory() ,20);
+            if (closeinv == true) {
+                Bukkit.getScheduler().runTaskLater(plugin, () -> p.closeInventory(), 20);
             }
         }
     }

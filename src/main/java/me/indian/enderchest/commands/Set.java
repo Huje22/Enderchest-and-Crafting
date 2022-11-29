@@ -9,7 +9,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 
-public class Set implements CommandExecutor , Listener{
+public class Set implements CommandExecutor, Listener {
 
     private final Enderchest plugin;
 
@@ -17,22 +17,22 @@ public class Set implements CommandExecutor , Listener{
         this.plugin = plugin;
     }
 
-        public boolean onCommand(final CommandSender sender, final Command command, final String label, final String[] args) {
-            if (sender instanceof Player) {
-                Player p = (Player) sender;
-                if (!sender.hasPermission("endacrft.admin")) {
-                    sender.sendMessage(plugin.getConfig().getString("admin-perms"));
-                    return false;
-                }
-
-                if (args.length == 1) {
-                    p.sendMessage("/set");
-                } else {
-                    OpenInventory.OpenInv(p, plugin);
-                }
-            } else {
-                sender.sendMessage(plugin.getConfig().getString("player-not-be"));
+    public boolean onCommand(final CommandSender sender, final Command command, final String label, final String[] args) {
+        if (sender instanceof Player) {
+            Player p = (Player) sender;
+            if (!sender.hasPermission("endacrft.admin")) {
+                sender.sendMessage(plugin.getConfig().getString("admin-perms"));
+                return false;
             }
-            return false;
+
+            if (args.length == 1) {
+                p.sendMessage("/set");
+            } else {
+                OpenInventory.OpenInv(p, plugin);
+            }
+        } else {
+            sender.sendMessage(plugin.getConfig().getString("player-not-be"));
         }
+        return false;
     }
+}
