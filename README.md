@@ -9,8 +9,7 @@ Jeśli używasz GeyserMC wiedz że plugin działa tak samo na bedrock jak i na j
 
 Plugin dodaje opcje otworzenia enderchesta i craftingu tam gdzie chcesz.
 ----------------------------------------------------------------
-
-Potrzebujesz pomocy? Pisz na discord :
+Discord support :
  https://discord.gg/aq6NaXsy2k
 
 :^ 
