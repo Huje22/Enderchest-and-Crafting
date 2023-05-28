@@ -2,11 +2,11 @@
 # 				EnderChest and Carfting plugin
 #					By: Indian Bartonka
 #				Support: https://discord.gg/aq6NaXsy2k
-#               § for colors
+#               § for colors (later i add fully support for &)
 #-------------------------------------------------------------------------
 #
 #Prefix
-prefix: "§6[§bEnderChest §aand §eCrafting§6]§r "
+prefix: "&6[&bEnderChest &aand &eCrafting&6]&r "
 #/open inventory name (You must reload server or restart)
 InvName: "Crafting and Enderchest"
 #Permissions messages
@@ -18,7 +18,7 @@ player-not-be: "You must be a Player"
 #Other messages
 off-feature: "§cThis feature is disabled by admin "
 successfully-set: "Successfully set to "
-config-reload: "Config has been reload"
+config-reload: "&aConfig has been reload"
 #Option that allows you to use crafting or enderchest w / open
 EnderChest: true
 Crafting: true

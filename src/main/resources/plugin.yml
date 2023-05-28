@@ -1,26 +1,16 @@
 name: EnderchestAndCrafting
 version: '${project.version}'
-main: me.indian.enderchest.main.Enderchest
+main: me.indian.enderchest.Enderchest
 api-version: 1.19
 author: IndianPL
 prefix: Enderchest and crafting
-softdepend: [PlaceholderAPI]
+softdepend: [ PlaceholderAPI ]
 description: Polski plugin
 commands:
- open:
-     description: enderchest and crafting
-     aliases:
-         - otworz
- endacrftr:
-    description: reload command
+  open:
+    description: enderchest and crafting
     aliases:
-        - eacreload
-        - er
- set:
-    description:
-    aliases:
-        - ustaw
-
- entest:
-    description:
+      - otworz
+  enderchest:
+    description: enderchest menagment command
 

@@ -1,6 +1,7 @@
 <div align="center">
 
 # Enderchest-and-Crafting
+
 [![Discord](https://img.shields.io/discord/941850822885646366?color=7289da&logo=discord&logoColor=white&style=for-the-badge)](https://discord.gg/mF3TehkeG3)
 ![Last Commit](https://img.shields.io/github/last-commit/IndianBartonka/Enderchest-and-Crafting?style=for-the-badge)
 [![Open issues](https://img.shields.io/github/issues/IndianBartonka/Enderchest-and-Crafting?style=for-the-badge)](https://github.com/IndianBartonka/Enderchest-and-Crafting/issues)
@@ -16,7 +17,6 @@
 [![PayPal](https://github.com/intergrav/devins-badges/blob/v2/assets/compact/donate/paypal-singular_vector.svg)](https://paypal.me/IndianPL)</br>
 To wtyczka umożliwiąca otwarcie skrzynki kresu albo stołu rzemieślniczego tam gdzie się chcę
 https://www.spigotmc.org/resources/enderchest-and-crafting.99276/
-
 
 Jeśli używasz GeyserMC wiedz że plugin działa tak samo na bedrock jak i na javie , nie ma żadnych problemów
 
