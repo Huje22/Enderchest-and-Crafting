@@ -68,7 +68,7 @@ public final class Enderchest extends JavaPlugin implements Listener {
         this.getLogger().info("------------------------------");
 
 
-        new UpdateChecker(this, 99276).getVersion(version -> {
+        new UpdateChecker(this).getVersion(version -> {
             if (this.getDescription().getVersion().equals(version)) {
                 getLogger().info(ColorUtil.replaceColorCode(prefix + "&a There is not a new update available."));
 
@@ -99,7 +99,7 @@ public final class Enderchest extends JavaPlugin implements Listener {
         Player player = e.getPlayer();
 
         if (player.isOp()) {
-            new UpdateChecker(this, 99276).getVersion(version -> {
+            new UpdateChecker(this).getVersion(version -> {
                 if (!(this.getDescription().getVersion().equals(version))) {
                     MessageApi.chat(player, ColorUtil.replaceColorCode(prefix + "&bThere is a new update available."));
                     MessageApi.hoverMessageCopy(player,
