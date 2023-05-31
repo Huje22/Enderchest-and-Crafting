@@ -20,7 +20,7 @@ public class HandListener implements Listener {
     }
 
     @EventHandler
-    public void InHandItem(PlayerInteractEvent event) {
+    private void InHandItem(PlayerInteractEvent event) {
         final Configuration config = plugin.getConfig();
         final Player player = event.getPlayer();
         final Action action = event.getAction();

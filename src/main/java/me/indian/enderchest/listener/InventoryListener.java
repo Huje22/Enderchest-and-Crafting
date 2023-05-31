@@ -18,7 +18,7 @@ public class InventoryListener implements Listener {
     }
 
     @EventHandler
-    public void onPlayerClickInventory(InventoryClickEvent event) {
+    private void onPlayerClickInventory(InventoryClickEvent event) {
         final Player player = (Player) event.getWhoClicked();
         final Configuration config = plugin.getConfig();
         final String inventoryName = event.getView().getTitle();

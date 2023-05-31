@@ -38,7 +38,7 @@ public class MessageApi {
 
     public static void hoverMessage(Player p, String text, String command, String hovertext, Boolean run) {
         TextComponent message = new TextComponent(text);
-        if (run == true) {
+        if (run) {
             message.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, command));
         } else {
             message.setClickEvent(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, command));
