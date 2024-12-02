@@ -18,16 +18,16 @@ public class InventoryListener implements Listener {
     }
 
     @EventHandler
-    private void onPlayerClickInventory(InventoryClickEvent event) {
+    private void onPlayerClickInventory(final InventoryClickEvent event) {
         final Player player = (Player) event.getWhoClicked();
-        final Configuration config = plugin.getConfig();
+        final Configuration config = this.plugin.getConfig();
         final String inventoryName = event.getView().getTitle();
         String itemName = "wrongName";
         if (event.getCurrentItem() != null && event.getCurrentItem().getItemMeta() != null) {
             itemName = event.getCurrentItem().getItemMeta().getDisplayName();
         }
 
-        if (inventoryName.equals(plugin.openName)) {
+        if (inventoryName.equals(this.plugin.openName)) {
             event.setCancelled(true);
 
             if (itemName.equals(ChatColor.GREEN + "Crafting")) {
@@ -41,7 +41,7 @@ public class InventoryListener implements Listener {
 
             if (itemName.equals(ChatColor.AQUA + "EnderChest")) {
                 if (config.getBoolean("EnderChest")) {
-                    Inventory i = player.getEnderChest();
+                    final Inventory i = player.getEnderChest();
                     player.openInventory(i);
                 } else {
                     player.sendMessage(config.getString("off-feature"));
@@ -56,13 +56,13 @@ public class InventoryListener implements Listener {
                 if (config.getBoolean("EnderChest")) {
                     config.set("EnderChest", false);
                     config.set("EnderInfo", config.getString("message-off"));
-                    plugin.saveConfig();
+                    this.plugin.saveConfig();
                     player.sendMessage("EnderChest " + config.getString("successfully-set") + " " + "false");
                     ReopenUtil.reOpenSettingsInventory(player);
                 } else {
                     config.set("EnderChest", true);
                     config.set("EnderInfo", config.getString("message-on"));
-                    plugin.saveConfig();
+                    this.plugin.saveConfig();
                     player.sendMessage("EnderChest " + config.getString("successfully-set") + " " + "true");
                     ReopenUtil.reOpenSettingsInventory(player);
                 }
@@ -72,13 +72,13 @@ public class InventoryListener implements Listener {
                 if (config.getBoolean("Crafting")) {
                     config.set("Crafting", false);
                     config.set("CraftInfo", config.getString("message-off"));
-                    plugin.saveConfig();
+                    this.plugin.saveConfig();
                     player.sendMessage("Crafting " + config.getString("successfully-set") + "false");
                     ReopenUtil.reOpenSettingsInventory(player);
                 } else {
                     config.set("Crafting", true);
                     config.set("CraftInfo", config.getString("message-on"));
-                    plugin.saveConfig();
+                    this.plugin.saveConfig();
                     player.sendMessage("Crafting " + config.getString("successfully-set") + "true");
                     ReopenUtil.reOpenSettingsInventory(player);
                 }

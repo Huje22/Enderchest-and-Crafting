@@ -4,7 +4,11 @@ import org.bukkit.ChatColor;
 
 public class ColorUtil {
 
-    public static String replaceColorCode(String msg) {
+    private ColorUtil() {
+
+    }
+
+    public static String colorize(final String msg) {
         return ChatColor.translateAlternateColorCodes('&', msg);
     }
 

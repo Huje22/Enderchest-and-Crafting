@@ -6,15 +6,15 @@ import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.Plugin;
 
 public class ConfigUtil {
-    private File file;
-    private FileConfiguration config;
+    private final File file;
+    private final FileConfiguration config;
 
-    public ConfigUtil(Plugin plugin, String patch) {
+    public ConfigUtil(final Plugin plugin, final String patch) {
         this(plugin.getDataFolder().getAbsolutePath() + "/" + patch);
 
     }
 
-    public ConfigUtil(String patch) {
+    public ConfigUtil(final String patch) {
         this.file = new File(patch);
         this.config = YamlConfiguration.loadConfiguration(this.file);
     }
@@ -23,7 +23,7 @@ public class ConfigUtil {
         try {
             this.config.save(this.file);
             return true;
-        } catch (Exception e) {
+        } catch (final Exception e) {
             e.printStackTrace();
             return false;
         }

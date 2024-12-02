@@ -10,34 +10,34 @@ import org.bukkit.entity.Player;
 
 public class MessageApi {
 
-    public static void actionBar(Player p, String text) {
+    public static void actionBar(final Player p, final String text) {
         p.spigot().sendMessage(ChatMessageType.ACTION_BAR, TextComponent.fromLegacyText(text.replace("<player>", p.getName())));
     }
 
-    public static void chat(Player p, String text) {
+    public static void chat(final Player p, final String text) {
         p.spigot().sendMessage(ChatMessageType.CHAT, TextComponent.fromLegacyText(text.replace("<player>", p.getName())));
     }
 
-    public static void console(Player p, String command) {
+    public static void console(final Player p, final String command) {
         Bukkit.dispatchCommand(Bukkit.getConsoleSender(), command.replace("<player>", p.getName()));
     }
 
-    public static void console(String command) {
+    public static void console(final String command) {
         Bukkit.dispatchCommand(Bukkit.getConsoleSender(), command);
     }
 
-    public static void playerCommand(Player p, String command) {
+    public static void playerCommand(final Player p, final String command) {
         Bukkit.dispatchCommand(p, command.replace("<player>", p.getName()));
     }
 
-    public static void hoverMessage(Player p, String text, String hovertext) {
-        TextComponent message = new TextComponent(text);
+    public static void hoverMessage(final Player p, final String text, final String hovertext) {
+        final TextComponent message = new TextComponent(text);
         message.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder(hovertext).create()));
         p.spigot().sendMessage(message);
     }
 
-    public static void hoverMessage(Player p, String text, String command, String hovertext, Boolean run) {
-        TextComponent message = new TextComponent(text);
+    public static void hoverMessage(final Player p, final String text, final String command, final String hovertext, final Boolean run) {
+        final TextComponent message = new TextComponent(text);
         if (run) {
             message.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, command));
         } else {
@@ -47,8 +47,8 @@ public class MessageApi {
         p.spigot().sendMessage(message);
     }
 
-    public static void hoverMessageCopy(Player p, String text1, String text2, String hovertext) {
-        TextComponent message = new TextComponent(text1);
+    public static void hoverMessageCopy(final Player p, final String text1, final String text2, final String hovertext) {
+        final TextComponent message = new TextComponent(text1);
         message.setClickEvent(new ClickEvent(ClickEvent.Action.COPY_TO_CLIPBOARD, text2));
         message.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder(hovertext).create()));
         p.spigot().sendMessage(message);

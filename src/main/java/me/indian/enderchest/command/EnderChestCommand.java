@@ -20,30 +20,30 @@ public class EnderChestCommand implements CommandExecutor {
 
     private final Enderchest plugin;
 
-    public EnderChestCommand(Enderchest plugin) {
+    public EnderChestCommand(final Enderchest plugin) {
         this.plugin = plugin;
     }
 
 
     @Override
-    public boolean onCommand(CommandSender sender, Command command, String s, String[] args) {
-        final Configuration config = plugin.getConfig();
+    public boolean onCommand(final CommandSender sender, final Command command, final String s, final String[] args) {
+        final Configuration config = this.plugin.getConfig();
 
         if (sender instanceof Player) {
-            Player player = (Player) sender;
+            final Player player = (Player) sender;
             if (sender.hasPermission("endacrft.admin")) {
 
                 if (args.length == 0) {
-                    player.sendMessage(ColorUtil.replaceColorCode(plugin.prefix + "&aUsage &b/enderchest &8[set, reload]"));
+                    player.sendMessage(ColorUtil.colorize(this.plugin.prefix + "&aUsage &b/enderchest &8[set, reload]"));
                 }
 
                 if (args[0].equalsIgnoreCase("set")) {
-                    openSettings(player);
+                    this.openSettings(player);
                 }
                 if (args[0].equalsIgnoreCase("reload")) {
-                    plugin.reloadConfig();
-                    sender.sendMessage(ColorUtil.replaceColorCode(config.getString("config-reload")));
-                    plugin.getLogger().info(config.getString("config-reload"));
+                    this.plugin.reloadConfig();
+                    sender.sendMessage(ColorUtil.colorize(config.getString("config-reload")));
+                    this.plugin.getLogger().info(config.getString("config-reload"));
                 }
             } else {
                 sender.sendMessage(config.getString("admin-perms"));
@@ -55,24 +55,24 @@ public class EnderChestCommand implements CommandExecutor {
     }
 
 
-    public void openSettings(Player player) {
-        Inventory inv = Bukkit.createInventory(null, InventoryType.HOPPER, "/open options");
+    public void openSettings(final Player player) {
+        final Inventory inv = Bukkit.createInventory(null, InventoryType.HOPPER, "/open options");
 
-        ItemStack crafting = new ItemStack(Material.CRAFTING_TABLE);
-        ItemMeta c = crafting.getItemMeta();
+        final ItemStack crafting = new ItemStack(Material.CRAFTING_TABLE);
+        final ItemMeta c = crafting.getItemMeta();
         c.setDisplayName(ChatColor.GREEN + "Crafting");
-        c.setLore(Arrays.asList("§e--------", plugin.getConfig().getString("CraftInfo")));
+        c.setLore(Arrays.asList("§e--------", this.plugin.getConfig().getString("CraftInfo")));
         crafting.setItemMeta(c);
 
-        ItemStack ender = new ItemStack(Material.ENDER_CHEST);
-        ItemMeta e = ender.getItemMeta();
+        final ItemStack ender = new ItemStack(Material.ENDER_CHEST);
+        final ItemMeta e = ender.getItemMeta();
         e.setDisplayName(ChatColor.AQUA + "EnderChest");
-        e.setLore(Arrays.asList("§e--------", plugin.getConfig().getString("EnderInfo")));
+        e.setLore(Arrays.asList("§e--------", this.plugin.getConfig().getString("EnderInfo")));
         ender.setItemMeta(e);
 
 
-        ItemStack empty = new ItemStack(Material.GRAY_STAINED_GLASS_PANE);
-        ItemMeta s = empty.getItemMeta();
+        final ItemStack empty = new ItemStack(Material.GRAY_STAINED_GLASS_PANE);
+        final ItemMeta s = empty.getItemMeta();
         s.setDisplayName(ChatColor.BLACK + "empty");
         empty.setItemMeta(s);
 

@@ -13,18 +13,18 @@ public class UpdateChecker {
 
     private final JavaPlugin plugin;
 
-    public UpdateChecker(JavaPlugin plugin) {
+    public UpdateChecker(final JavaPlugin plugin) {
         this.plugin = plugin;
     }
 
     public void getVersion(final Consumer<String> consumer) {
         Bukkit.getScheduler().runTaskAsynchronously(this.plugin, () -> {
-            try (InputStream inputStream = new URL("https://api.spigotmc.org/legacy/update.php?resource=99276").openStream(); Scanner scanner = new Scanner(inputStream)) {
+            try (final InputStream inputStream = new URL("https://api.spigotmc.org/legacy/update.php?resource=99276").openStream(); final Scanner scanner = new Scanner(inputStream)) {
                 if (scanner.hasNext()) {
                     consumer.accept(scanner.next());
                 }
-            } catch (IOException exception) {
-                plugin.getLogger().info("Unable to check for updates: " + exception.getMessage());
+            } catch (final IOException exception) {
+                this.plugin.getLogger().info("Unable to check for updates: " + exception.getMessage());
             }
         });
     }

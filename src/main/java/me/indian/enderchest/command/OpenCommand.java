@@ -20,18 +20,18 @@ public class OpenCommand implements CommandExecutor {
 
     private final Enderchest plugin;
 
-    public OpenCommand(Enderchest plugin) {
+    public OpenCommand(final Enderchest plugin) {
         this.plugin = plugin;
 
     }
 
     @Override
-    public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        final Configuration config = plugin.getConfig();
+    public boolean onCommand(final CommandSender sender, final Command command, final String label, final String[] args) {
+        final Configuration config = this.plugin.getConfig();
 
         if (sender instanceof Player) {
             if (sender.hasPermission("endacrft.open")) {
-                openEnderchestGui((Player) sender);
+                this.openEnderchestGui((Player) sender);
             } else {
                 sender.sendMessage(config.getString("Open-Perm"));
             }
@@ -41,24 +41,24 @@ public class OpenCommand implements CommandExecutor {
         return false;
     }
 
-    public void openEnderchestGui(Player player) {
-        Inventory inv = Bukkit.createInventory(null, InventoryType.HOPPER, plugin.openName);
+    public void openEnderchestGui(final Player player) {
+        final Inventory inv = Bukkit.createInventory(null, InventoryType.HOPPER, this.plugin.openName);
 
-        ItemStack crafting = new ItemStack(Material.CRAFTING_TABLE);
-        ItemMeta c = crafting.getItemMeta();
+        final ItemStack crafting = new ItemStack(Material.CRAFTING_TABLE);
+        final ItemMeta c = crafting.getItemMeta();
         c.setDisplayName(ChatColor.GREEN + "Crafting");
-        c.setLore(Arrays.asList("§e--------", plugin.getConfig().getString("CraftInfo")));
+        c.setLore(Arrays.asList("§e--------", this.plugin.getConfig().getString("CraftInfo")));
         crafting.setItemMeta(c);
 
-        ItemStack ender = new ItemStack(Material.ENDER_CHEST);
-        ItemMeta e = ender.getItemMeta();
+        final ItemStack ender = new ItemStack(Material.ENDER_CHEST);
+        final ItemMeta e = ender.getItemMeta();
         e.setDisplayName(ChatColor.AQUA + "EnderChest");
-        e.setLore(Arrays.asList("§e--------", plugin.getConfig().getString("EnderInfo")));
+        e.setLore(Arrays.asList("§e--------", this.plugin.getConfig().getString("EnderInfo")));
         ender.setItemMeta(e);
 
 
-        ItemStack empty = new ItemStack(Material.GRAY_STAINED_GLASS_PANE);
-        ItemMeta s = empty.getItemMeta();
+        final ItemStack empty = new ItemStack(Material.GRAY_STAINED_GLASS_PANE);
+        final ItemMeta s = empty.getItemMeta();
         s.setDisplayName(ChatColor.BLACK + "empty");
         empty.setItemMeta(s);
 

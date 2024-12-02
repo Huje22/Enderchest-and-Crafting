@@ -15,13 +15,13 @@ public class HandListener implements Listener {
 
     private final Enderchest plugin;
 
-    public HandListener(Enderchest plugin) {
+    public HandListener(final Enderchest plugin) {
         this.plugin = plugin;
     }
 
     @EventHandler
-    private void InHandItem(PlayerInteractEvent event) {
-        final Configuration config = plugin.getConfig();
+    private void InHandItem(final PlayerInteractEvent event) {
+        final Configuration config = this.plugin.getConfig();
         final Player player = event.getPlayer();
         final Action action = event.getAction();
         final ItemStack mainHandItem = player.getInventory().getItemInMainHand();
@@ -32,7 +32,7 @@ public class HandListener implements Listener {
             }
             if (mainHandItem.getType() == Material.CRAFTING_TABLE) {
                 if (player.hasPermission("endacrft.open") || player.hasPermission("endacrft.crafting")) {
-                    if (plugin.getConfig().getBoolean("Crafting-Hand")) {
+                    if (this.plugin.getConfig().getBoolean("Crafting-Hand")) {
                         player.openWorkbench(player.getLocation(), true);
                         player.sendMessage(config.getString("Crafting-Open-Hand"));
                     } else {
@@ -45,7 +45,7 @@ public class HandListener implements Listener {
                 if (player.hasPermission("endacrft.open") || player.hasPermission("endacrft.enderchest")) {
                     if (config.getBoolean("EnderChest-Hand")) {
                         player.sendMessage(config.getString("EnderChest-Open-Hand"));
-                        Inventory i = player.getEnderChest();
+                        final Inventory i = player.getEnderChest();
                         player.openInventory(i);
                     } else {
                         player.sendMessage(config.getString("off-feature"));
